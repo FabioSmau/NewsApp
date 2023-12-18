@@ -6,7 +6,7 @@ import okhttp3.Response
 import java.util.concurrent.TimeUnit
 
 private const val TIME_OUT_SECONDS = 60L
-private const val API_KEY_HEADER = "X-Api-Key"
+private const val API_KEY_HEADER = "x-api-key"
 private const val API_KEY = "a4aa063220574efa9e937bcabbe0cd4b"
 
 class OkHttpSettings : NetworkSettingsProvider<OkHttpClient> {

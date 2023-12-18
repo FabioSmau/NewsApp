@@ -16,7 +16,7 @@ import kotlinx.coroutines.withContext
 
 class NewsListViewModel(
     private val repository: NewsRepository,
-    private val coroutineDispatcher: CoroutineDispatcher
+    private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
 
     private var _uiState = MutableStateFlow(NewsListState())
@@ -31,7 +31,7 @@ class NewsListViewModel(
         getNews()
     }
 
-    fun getNews() {
+    private fun getNews() {
         startLoadingState()
         viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
             val news = repository.getLastNews()

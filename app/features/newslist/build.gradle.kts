@@ -54,6 +54,8 @@ dependencies {
 
     implementation(project(mapOf("path" to ":app:data:news")))
     implementation(project(mapOf("path" to ":app:common:models")))
+    implementation(project(mapOf("path" to ":app:common:ui")))
+    implementation("androidx.navigation:navigation-runtime-ktx:2.7.6")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")

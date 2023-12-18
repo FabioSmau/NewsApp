@@ -1,8 +1,9 @@
 package com.news.newslist
 
-import com.news.data.model.News
+import com.news.models.News
+
 data class NewsListState(
     var loading: Boolean = false,
-    val news: List<News> = emptyList(),
+    val news: News = News.createEmptyNews(),
     val error: Boolean = false
 )

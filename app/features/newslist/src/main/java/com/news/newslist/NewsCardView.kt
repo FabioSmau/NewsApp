@@ -1,3 +1,4 @@
+/*
 package com.news.newslist
 
 import android.widget.TextView
@@ -28,7 +29,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.viewinterop.AndroidView
-import com.news.data.model.News
 
 class NewsCardView {
 
@@ -69,9 +69,13 @@ class NewsCardView {
                 .padding(padding)
                 .fillMaxWidth()
         ) {
-            Row(verticalAlignment = Alignment.CenterVertically) { /*...*/ }
+            Row(verticalAlignment = Alignment.CenterVertically) { */
+/*...*//*
+ }
             Spacer(Modifier.size(padding))
-            Card(elevation = CardDefaults.cardElevation(8.dp)) { /*...*/ }
+            Card(elevation = CardDefaults.cardElevation(8.dp)) { */
+/*...*//*
+ }
         }
     }
-}
+}*/

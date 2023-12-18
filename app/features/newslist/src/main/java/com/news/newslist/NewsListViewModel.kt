@@ -3,8 +3,8 @@ package com.news.newslist
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.news.data.model.News
 import com.news.data.repository.NewsRepository
+import com.news.models.News
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineExceptionHandler
 import kotlinx.coroutines.Dispatchers
@@ -24,7 +24,7 @@ class NewsListViewModel(
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Log.e(NewsListViewModel::class.java.name, throwable.message ?: "")
-        _uiState.value = _uiState.value.copy(loading = false, news = emptyList(), error = true)
+        _uiState.value = _uiState.value.copy(loading = false, error = true)
     }
 
     init {
@@ -45,7 +45,7 @@ class NewsListViewModel(
         _uiState.value = _uiState.value.copy(loading = true)
     }
 
-    private fun onLoadedNewsWithSuccess(news: List<News>) {
+    private fun onLoadedNewsWithSuccess(news: News) {
         _uiState.value = _uiState.value.copy(loading = false, news = news)
     }
 }

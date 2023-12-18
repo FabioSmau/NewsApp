@@ -1,15 +1,24 @@
 package com.news.data.repository
 
-import com.news.data.model.News
+import com.news.models.Article
+import com.news.models.News
 
-class NewsMockRepository: NewsRepository {
-    override suspend fun getLastNews(): List<News> {
-        return listOf(
-            News("Noticia 1", "Descrição da noticia 1"),
-            News("Noticia 2", "Descrição da noticia 2"),
-            News("Noticia 3", "Descrição da noticia 3"),
-            News("Noticia 4", "Descrição da noticia 4"),
-            News("Noticia 5", "Descrição da noticia 5"),
+
+class NewsMockRepository : NewsRepository {
+    override suspend fun getLastNews(): News {
+        return News(
+            totalResults = 1,
+            articles = listOf(
+                Article(
+                    author = "autor",
+                    title = "Noticia 1",
+                    description = "Descrição da noticia 1",
+                    url = "url da noticia",
+                    urlToImage = "url da imagem da noticia",
+                    publishedAt = "data da publicação da noticia",
+                    content = "conteudo"
+                ),
+            )
         )
     }
 }

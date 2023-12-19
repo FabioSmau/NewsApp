@@ -58,7 +58,7 @@ fun NewsCard(article: Article, modifier: Modifier = Modifier, onClick: () -> Uni
 
 @Preview
 @Composable
-fun CatInfoPreview() {
+fun NewsCardPreview() {
     NewsCard(
         Article(title = "Titulo")
     )

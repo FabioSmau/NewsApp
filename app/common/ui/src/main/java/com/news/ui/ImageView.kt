@@ -22,6 +22,6 @@ fun ImageViewAsync(url: String, modifier: Modifier = Modifier) {
                 )
             )
         ),
-        contentScale = ContentScale.Inside,
+        contentScale = ContentScale.Crop,
     )
 }

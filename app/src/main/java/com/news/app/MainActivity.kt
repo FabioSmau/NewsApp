@@ -29,16 +29,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             AppNewsTheme {
                 val navController = rememberNavController()
-                val backStackEntry by navController.currentBackStackEntryAsState()
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
                     NavHost(navController, startDestination = "main") {
                         composable("main") { NewsListScreen(navController) }
-                        composable("list") {
-                            NewsDetailScreen(navController)
-                        }
+                        composable("list") { NewsDetailScreen() }
                     }
                 }
             }

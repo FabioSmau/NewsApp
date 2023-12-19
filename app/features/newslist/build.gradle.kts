@@ -51,10 +51,13 @@ dependencies {
     implementation("androidx.compose.material3:material3")
     implementation("androidx.compose.ui:ui-android:1.5.4")
     implementation("io.insert-koin:koin-android:3.5.0")
+    implementation("io.insert-koin:koin-core:3.5.0")
+    implementation ("io.insert-koin:koin-androidx-compose:3.5.0")
 
     implementation(project(mapOf("path" to ":app:data:news")))
     implementation(project(mapOf("path" to ":app:common:models")))
     implementation(project(mapOf("path" to ":app:common:ui")))
+    implementation(project(mapOf("path" to ":app:common:utils")))
     implementation("androidx.navigation:navigation-runtime-ktx:2.7.6")
 
     testImplementation("junit:junit:4.13.2")

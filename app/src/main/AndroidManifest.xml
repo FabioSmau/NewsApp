@@ -18,7 +18,7 @@
         android:name=".AppNewsApplication"
         tools:targetApi="31">
         <activity
-            android:name="com.news.newslist.NewsListActivity"
+            android:name="com.news.app.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.AppNews">
             <intent-filter>

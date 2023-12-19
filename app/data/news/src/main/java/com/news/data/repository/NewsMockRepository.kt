@@ -5,7 +5,7 @@ import com.news.models.News
 
 
 class NewsMockRepository : NewsRepository {
-    override suspend fun getLastNews(): News {
+    override suspend fun getLastNews(): News? {
         return News(
             totalResults = 1,
             articles = listOf(

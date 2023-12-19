@@ -3,6 +3,7 @@ package com.news.app
 import android.app.Application
 import com.news.data.di.repositoryNews
 import com.news.network.di.networkModule
+import com.news.newsdetails.di.newsDetailModule
 import com.news.newslist.di.newsModule
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -17,7 +18,8 @@ class AppNewsApplication: Application() {
             modules(
                 repositoryNews,
                 networkModule,
-                newsModule
+                newsModule,
+                newsDetailModule
             )
         }
     }

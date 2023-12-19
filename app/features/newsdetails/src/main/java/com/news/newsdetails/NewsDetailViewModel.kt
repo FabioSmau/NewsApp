@@ -27,18 +27,22 @@ class NewsDetailViewModel(
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Log.e(NewsDetailViewModel::class.java.name, throwable.message ?: "")
-        _uiState.value = _uiState.value.copy(loading = false, error = true)
+
     }
 
     init {
         getArticleById()
     }
-    private fun getArticleById() {
+    fun getArticleById() {
         startLoadingState()
         viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
             val article = repository.getLastNews()?.articles?.firstOrNull { it.title == getArticleIdentifier() }
             withContext(Dispatchers.Main) {
-                onLoadedArticleWithSuccess(article)
+                if (article != null) {
+                    onLoadedArticleWithSuccess(article)
+                } else {
+                    onError()
+                }
             }
         }
     }
@@ -51,7 +55,11 @@ class NewsDetailViewModel(
         _uiState.value = _uiState.value.copy(loading = true)
     }
 
-    private fun onLoadedArticleWithSuccess(article: Article?) {
+    private fun onLoadedArticleWithSuccess(article: Article) {
         _uiState.value = _uiState.value.copy(loading = false, article = article)
+    }
+
+    private fun onError() {
+        _uiState.value = _uiState.value.copy(loading = false, error = true)
     }
 }

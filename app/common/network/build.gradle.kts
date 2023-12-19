@@ -33,7 +33,7 @@ android {
 }
 
 dependencies {
-    implementation(Retrofit.retrofit)
+    implementation(Retrofit.retrofitLib)
     implementation(Retrofit.retrofitConverter)
     implementation(Retrofit.okHttp)
     implementation(Retrofit.interceptor)

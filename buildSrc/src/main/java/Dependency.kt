@@ -10,6 +10,7 @@ object Versions {
     const val jUnitExt = "1.1.5"
     const val retrofit = "2.9.0"
     const val okHttp = "4.12.0"
+    const val mockk = "1.13.5"
 }
 
 
@@ -42,10 +43,11 @@ object Tests {
     const val jUnitTests = "junit:junit:${Versions.jUnit}"
     const val jUnitExt = "androidx.test.ext:junit:${Versions.jUnitExt}"
     const val jUnit4 = "androidx.compose.ui:ui-test-junit4"
+    const val mockk = "io.mockk:mockk:${Versions.mockk}"
 }
 
 object Retrofit {
-    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val retrofitLib = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
     const val retrofitConverter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val okHttp = "com.squareup.okhttp3:okhttp:${Versions.okHttp}"
     const val interceptor = "com.squareup.okhttp3:logging-interceptor:${Versions.okHttp}"

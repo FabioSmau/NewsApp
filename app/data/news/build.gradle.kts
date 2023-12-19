@@ -33,13 +33,11 @@ android {
 }
 
 dependencies {
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("io.insert-koin:koin-android:3.5.0")
-    implementation(project(mapOf("path" to ":app:common:network")))
-    implementation(project(mapOf("path" to ":app:common:models")))
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(AndroidX.core)
+    implementation(Koin.koinAndroid)
+    implementation(AndroidX.navigationRuntime)
+    testImplementation(Tests.jUnitTests)
+    testImplementation(Tests.jUnitExt)
+    implementation(project(mapOf("path" to Modules.network)))
+    implementation(project(mapOf("path" to Modules.models)))
 }

@@ -33,18 +33,13 @@ android {
 }
 
 dependencies {
+    implementation(Retrofit.retrofit)
+    implementation(Retrofit.retrofitConverter)
+    implementation(Retrofit.okHttp)
+    implementation(Retrofit.interceptor)
+    implementation(Koin.koinAndroid)
+    implementation(project(mapOf("path" to Modules.models)))
 
-    implementation("androidx.core:core-ktx:1.12.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.11.0")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.10.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0")
-    implementation("io.insert-koin:koin-android:3.5.0")
-    implementation(project(mapOf("path" to ":app:common:models")))
-
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    testImplementation(Tests.jUnitTests)
+    testImplementation(Tests.jUnitExt)
 }

@@ -31,7 +31,7 @@ class NewsListViewModel(
         getNews()
     }
 
-    private fun getNews() {
+    fun getNews() {
         startLoadingState()
         viewModelScope.launch(coroutineDispatcher + coroutineExceptionHandler) {
             val news = repository.getLastNews()

@@ -64,6 +64,9 @@ dependencies {
 
     testImplementation(Tests.jUnitTests)
     testImplementation(Tests.jUnitExt)
+    testImplementation(Tests.mockk)
+    testImplementation(Tests.coroutinesTests)
+    testImplementation(Tests.coreTesting)
     androidTestImplementation(platform(Compose.composePlatformBom))
     androidTestImplementation(Tests.jUnit4)
     debugImplementation(Compose.composeUiTooling)

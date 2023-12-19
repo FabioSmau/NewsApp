@@ -11,6 +11,8 @@ object Versions {
     const val retrofit = "2.9.0"
     const val okHttp = "4.12.0"
     const val mockk = "1.13.5"
+    const val coroutines = "1.6.4"
+    const val coreTesting = "2.2.0"
 }
 
 
@@ -44,6 +46,8 @@ object Tests {
     const val jUnitExt = "androidx.test.ext:junit:${Versions.jUnitExt}"
     const val jUnit4 = "androidx.compose.ui:ui-test-junit4"
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
+    const val coroutinesTests = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
+    const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
 }
 
 object Retrofit {

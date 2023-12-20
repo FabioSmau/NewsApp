@@ -15,7 +15,6 @@ object Versions {
     const val coreTesting = "2.2.0"
 }
 
-
 object AndroidX {
     const val core = "androidx.core:core-ktx:${Versions.androidXCore}"
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.androidXLifecycle}"
@@ -48,6 +47,7 @@ object Tests {
     const val mockk = "io.mockk:mockk:${Versions.mockk}"
     const val coroutinesTests = "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     const val coreTesting = "androidx.arch.core:core-testing:${Versions.coreTesting}"
+    const val koinTest = "io.insert-koin:koin-test-junit4:${Versions.koin}"
 }
 
 object Retrofit {

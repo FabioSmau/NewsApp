@@ -18,8 +18,8 @@ import kotlinx.coroutines.withContext
 
 class NewsDetailViewModel(
     private val repository: NewsRepository,
-    private val savedStateHandle: SavedStateHandle,
-    private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO
+    private val coroutineDispatcher: CoroutineDispatcher = Dispatchers.IO,
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private var _uiState = MutableStateFlow(NewsDetailState())

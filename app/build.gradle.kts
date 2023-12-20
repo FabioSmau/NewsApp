@@ -78,4 +78,5 @@ dependencies {
     androidTestImplementation(Tests.jUnit4)
     debugImplementation(Compose.composeUiTooling)
     debugImplementation(Compose.composeUiTestManifest)
+    testImplementation(Tests.koinTest)
 }

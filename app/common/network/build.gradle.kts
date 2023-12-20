@@ -44,6 +44,5 @@ dependencies {
     testImplementation(Tests.jUnitExt)
     testImplementation(Tests.mockk)
     testImplementation(Tests.coreTesting)
-    androidTestImplementation(Tests.jUnit4)
     testImplementation(Tests.koinTest)
 }

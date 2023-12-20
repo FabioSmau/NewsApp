@@ -7,13 +7,7 @@ import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -35,47 +29,47 @@ fun NewsDetailScreen(
 ) {
     val state by newsDetailViewModel.uiState.collectAsState()
     Column(Modifier.fillMaxSize()) {
-        CreateTopBar(navController)
-        CreateViewByArticle(state, modifier)
+        TopBarWithBackButton(navController)
+        ViewByArticleState(state, modifier)
     }
 }
 
 @Composable
-private fun CreateTopBar(navController: NavHostController) {
+private fun TopBarWithBackButton(navController: NavHostController) {
     TopAppBarWithBackButton("Details", true) {
         navController.popBackStack()
     }
 }
 
 @Composable
-private fun CreateViewByArticle(state: NewsDetailState, modifier: Modifier) {
+private fun ViewByArticleState(state: NewsDetailState, modifier: Modifier) {
     if (state.loading) {
-        CreateLoading(modifier)
+        Loading(modifier)
         return
     }
     if (state.error || state.article == null) {
-        CreateEmptyState(modifier)
+        EmptyScreen(modifier)
         return
     }
-    CreateNewsDetails(state.article, modifier)
+    NewsDetailsScreen(state.article, modifier)
 }
 
 @Composable
-private fun CreateLoading(modifier: Modifier) {
+private fun Loading(modifier: Modifier) {
     Box(contentAlignment = Alignment.Center, modifier = modifier.fillMaxSize()) {
         CircularLoading()
     }
 }
 
 @Composable
-private fun CreateEmptyState(modifier: Modifier) {
+private fun EmptyScreen(modifier: Modifier) {
     Box(contentAlignment = Alignment.Center, modifier = modifier.fillMaxSize()) {
         Text(text = "Error to load details of news!")
     }
 }
 
 @Composable
-private fun CreateNewsDetails(article: Article?, modifier: Modifier) {
+private fun NewsDetailsScreen(article: Article?, modifier: Modifier) {
     Column(Modifier.fillMaxSize()) {
         HeaderView(title = article?.title, url = article?.urlToImage)
         ContentNewsList(article)

@@ -24,7 +24,7 @@ class NewsListViewModel(
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Log.e(NewsListViewModel::class.java.name, throwable.message ?: "")
-        _uiState.value = _uiState.value.copy(loading = false, error = true)
+        onError()
     }
 
     init {
@@ -47,6 +47,10 @@ class NewsListViewModel(
 
     private fun onLoadedNewsWithSuccess(news: News?) {
         _uiState.value = _uiState.value.copy(loading = false, news = news)
+    }
+
+    private fun onError() {
+        _uiState.value = _uiState.value.copy(loading = false, error = true)
     }
 }
 

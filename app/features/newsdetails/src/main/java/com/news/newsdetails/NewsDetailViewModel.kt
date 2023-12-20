@@ -27,7 +27,7 @@ class NewsDetailViewModel(
 
     private val coroutineExceptionHandler = CoroutineExceptionHandler { _, throwable ->
         Log.e(NewsDetailViewModel::class.java.name, throwable.message ?: "")
-
+        onError()
     }
 
     init {

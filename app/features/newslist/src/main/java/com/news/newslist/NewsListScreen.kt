@@ -31,49 +31,44 @@ fun NewsListScreen(
 ) {
     val state by newsListViewModel.uiState.collectAsState()
     Column(Modifier.fillMaxSize()) {
-        CreateTopBar()
-        CreateViewByState(state, modifier, navController)
+        TopAppBarWithBackButton("News", false) {}
+        ViewByState(state, modifier, navController)
     }
 }
 
 @Composable
-private fun CreateTopBar() {
-    TopAppBarWithBackButton("News", false) {}
-}
-
-@Composable
-private fun CreateViewByState(
+private fun ViewByState(
     state: NewsListState,
     modifier: Modifier,
     navController: NavHostController
 ) {
     if (state.loading) {
-        CreateLoading(modifier)
+        Loading(modifier)
         return
     }
     if (state.error || state.news?.articles?.isEmpty() == true) {
-        CreateEmptyState(modifier)
+        EmptyScreen(modifier)
         return
     }
-    CreateNews(state.news, navController)
+    NewsListScreen(state.news, navController)
 }
 
 @Composable
-private fun CreateLoading(modifier: Modifier) {
+private fun Loading(modifier: Modifier) {
     Box(contentAlignment = Alignment.Center, modifier = modifier.fillMaxSize()) {
         CircularLoading()
     }
 }
 
 @Composable
-private fun CreateEmptyState(modifier: Modifier) {
+private fun EmptyScreen(modifier: Modifier) {
     Box(contentAlignment = Alignment.Center, modifier = modifier.fillMaxSize()) {
         Text(text = "List news is empty")
     }
 }
 
 @Composable
-private fun CreateNews(news: News?, navController: NavHostController) {
+private fun NewsListScreen(news: News?, navController: NavHostController) {
     LazyColumn(
         contentPadding = PaddingValues(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)

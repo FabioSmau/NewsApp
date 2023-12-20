@@ -1,5 +1,6 @@
 package com.news.utils
 
+import android.annotation.SuppressLint
 import android.os.Bundle
 import androidx.core.net.toUri
 import androidx.navigation.NavController
@@ -8,6 +9,7 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavOptions
 import androidx.navigation.Navigator
 
+@SuppressLint("RestrictedApi")
 fun NavController.navigate(
     route: String,
     args: Bundle,

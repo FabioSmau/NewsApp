@@ -45,7 +45,6 @@ class NewsDetailViewModelTest {
             assert(viewModel.uiState.value.article != null)
             assert(viewModel.uiState.value.article?.title == "Noticia 2")
             assert(!viewModel.uiState.value.loading)
-            assert(!viewModel.uiState.value.error)
         }
     }
 

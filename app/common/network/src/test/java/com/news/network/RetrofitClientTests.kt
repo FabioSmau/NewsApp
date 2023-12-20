@@ -1,6 +1,5 @@
 package com.news.network
 
-import com.news.network.di.baseUrl
 import com.news.network.di.networkModule
 import org.junit.Rule
 import org.junit.Test

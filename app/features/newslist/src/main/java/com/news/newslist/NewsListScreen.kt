@@ -3,6 +3,7 @@ package com.news.newslist
 import android.os.Bundle
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.lazy.LazyColumn
@@ -18,6 +19,7 @@ import androidx.navigation.NavHostController
 import com.news.models.ARTICLE_ID_ARG
 import com.news.models.News
 import com.news.ui.CircularLoading
+import com.news.ui.TopAppBarWithBackButton
 import com.news.utils.navigate
 import org.koin.androidx.compose.koinViewModel
 
@@ -28,7 +30,15 @@ fun NewsListScreen(
     newsListViewModel: NewsListViewModel = koinViewModel(),
 ) {
     val state by newsListViewModel.uiState.collectAsState()
-    CreateViewByState(state, modifier, navController)
+    Column(Modifier.fillMaxSize()) {
+        CreateTopBar()
+        CreateViewByState(state, modifier, navController)
+    }
+}
+
+@Composable
+private fun CreateTopBar() {
+    TopAppBarWithBackButton("News", false) {}
 }
 
 @Composable
